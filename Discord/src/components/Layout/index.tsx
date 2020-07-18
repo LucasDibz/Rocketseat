@@ -13,17 +13,17 @@ import ChannelData from '../ChannelData';
 import UserList from '../UserList';
 
 const Layout: React.FC = () => {
-   return (
-      <Grid>
-         <ServerList />
-         <ServerName />
-         <ChannelInfo />
-         <ChannelList />
-         <UserInfo />
-         <ChannelData />
-         <UserList />
-      </Grid>
-   );
-}
+  return (
+    <Grid>
+      <ServerList />
+      <ServerName />
+      <ChannelInfo />
+      <ChannelList />
+      <UserInfo />
+      <ChannelData />
+      <UserList />
+    </Grid>
+  );
+};
 
 export default Layout;

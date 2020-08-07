@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, Picker } from 'react-native';
 import {
   ScrollView,
-  TextInput,
   BorderlessButton,
   RectButton,
 } from 'react-native-gesture-handler';

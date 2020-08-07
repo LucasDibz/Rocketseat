@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Picker } from 'react-native';
 import {
   ScrollView,
   TextInput,
@@ -9,11 +9,14 @@ import {
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Feather } from '@expo/vector-icons';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import PageHeader from '../../components/PageHeader';
 
 import api from '../../services/api';
+
+import filtersData from '../../data/filters.json';
 
 import styles from './styles';
 
@@ -23,9 +26,20 @@ const TeacherList = () => {
   const [teachers, setTeachers] = useState([]);
   const [favorites, setFavorites] = useState<number[]>([]);
 
-  const [subject, setSubject] = useState('');
-  const [week_day, setWeekDay] = useState('');
+  const [subject, setSubject] = useState('Artes');
+  const [week_day, setWeekDay] = useState('0');
   const [time, setTime] = useState('');
+  const [showTimePicker, setShowTimePicker] = useState(false);
+
+  function handleChangedSelectedDate(event: any, selectedDate: any) {
+    const hour = selectedDate.getHours();
+    const minutes = selectedDate.getMinutes();
+
+    setShowTimePicker(false);
+
+    const selectedTime = `${hour}:${minutes}`;
+    setTime(selectedTime);
+  }
 
   function loadFavorites() {
     AsyncStorage.getItem('favorites').then((response) => {
@@ -80,35 +94,54 @@ const TeacherList = () => {
         {isFiltersVisible && (
           <View style={styles.searchForm}>
             <Text style={styles.label}>Matéria</Text>
-            <TextInput
+            <Picker
               style={styles.input}
-              value={subject}
-              onChangeText={(text) => setSubject(text)}
-              placeholder="Qual a matéria?"
-              placeholderTextColor="#c1bccc"
-            />
+              onValueChange={(value) => setSubject(String(value))}
+            >
+              {filtersData.subjects.map((subject) => (
+                <Picker.Item
+                  key={subject.value}
+                  label={subject.label}
+                  value={subject.value}
+                />
+              ))}
+            </Picker>
 
             <View style={styles.inputGroup}>
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Dia da Semana</Text>
-                <TextInput
+                <Picker
                   style={styles.input}
-                  value={week_day}
-                  onChangeText={(text) => setWeekDay(text)}
-                  placeholder="Qual o dia?"
-                  placeholderTextColor="#c1bccc"
-                />
+                  onValueChange={(value) => setWeekDay(String(value))}
+                >
+                  {filtersData.days.map((day) => (
+                    <Picker.Item
+                      key={day.value}
+                      label={day.label}
+                      value={day.value}
+                    />
+                  ))}
+                </Picker>
               </View>
 
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Horário</Text>
-                <TextInput
+                <RectButton
                   style={styles.input}
-                  value={time}
-                  onChangeText={(text) => setTime(text)}
-                  placeholder="Qual o horário?"
-                  placeholderTextColor="#c1bccc"
-                />
+                  onPress={() => setShowTimePicker(true)}
+                >
+                  <Text>{time}</Text>
+                </RectButton>
+                {showTimePicker && (
+                  <DateTimePicker
+                    testID="dateTimePicker"
+                    value={new Date()}
+                    mode={'time'}
+                    is24Hour={true}
+                    display="default"
+                    onChange={handleChangedSelectedDate}
+                  />
+                )}
               </View>
             </View>
 

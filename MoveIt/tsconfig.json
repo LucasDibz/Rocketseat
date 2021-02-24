@@ -26,11 +26,8 @@
       "@api/*": [
         "./src/api/*"
       ],
-      "@models/*": [
-        "./src/models/*"
-      ],
-      "@screens/*": [
-        "./src/screens/*"
+      "@contexts/*": [
+        "./src/contexts/*"
       ],
       "@styles/*": [
         "./src/styles/*"
@@ -38,15 +35,6 @@
       "@public/*": [
         "./public/*"
       ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
-      "@app/*": [
-        "./src/app/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ]
     }
   },
   "exclude": [

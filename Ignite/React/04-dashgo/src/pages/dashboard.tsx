@@ -50,7 +50,34 @@ const options = {
     },
   },
 };
-const series = [{ name: 'series1', data: [31, 120, 10, 28, 51, 18, 109] }];
+const series1 = [
+  {
+    name: 'series1',
+    data: [
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+    ],
+  },
+];
+const series2 = [
+  {
+    name: 'series1',
+    data: [
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+      Math.floor(Math.random() * 200),
+    ],
+  },
+];
 
 export default function Dashboard() {
   return (
@@ -61,18 +88,28 @@ export default function Dashboard() {
         <Sidebar />
 
         <SimpleGrid flex='1' gap='4' minChildWidth='320px' align='flex-start'>
-          <Box p='8' bg='gray.800' borderRadius={8} pb='4'>
+          <Box p={['6', '8']} bg='gray.800' borderRadius={8} pb='4'>
             <Text fontSize='large' mb='4'>
               Inscritos na semana
             </Text>
-            <Chart options={options} series={series} type='area' height={160} />
+            <Chart
+              options={options}
+              series={series1}
+              type='area'
+              height={160}
+            />
           </Box>
 
-          <Box p='8' bg='gray.800' borderRadius={8} pb='4'>
+          <Box p={['6', '8']} bg='gray.800' borderRadius={8} pb='4'>
             <Text fontSize='large' mb='4'>
               Taxa de abertura
             </Text>
-            <Chart options={options} series={series} type='area' height={160} />
+            <Chart
+              options={options}
+              series={series2}
+              type='area'
+              height={160}
+            />
           </Box>
         </SimpleGrid>
       </Flex>

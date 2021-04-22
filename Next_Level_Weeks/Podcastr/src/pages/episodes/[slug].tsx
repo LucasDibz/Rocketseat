@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { format, parseISO } from 'date-fns';
 import ptBr from 'date-fns/locale/pt-BR';
 
@@ -25,6 +26,10 @@ interface EpisodeProps {
 }
 
 export default function Episode({ episode }: EpisodeProps) {
+  const router = useRouter();
+
+  if (router.isFallback) return <p>Carregando....</p>;
+
   return (
     <div className={styles.episode}>
       <div className={styles.thumbnailContainer}>

@@ -1,4 +1,4 @@
-# Desafio Ignite Node - 02
+# Desafio Ignite Node - 03
 
 Desafio do curso Ignite da Rocketseat.
 

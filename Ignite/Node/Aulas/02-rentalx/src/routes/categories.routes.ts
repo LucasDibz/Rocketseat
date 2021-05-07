@@ -1,32 +1,26 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+import multer from 'multer';
 
-import { CategoriesRepository } from '../repositories/CategoriesRepository';
-import { CreateCategoryService } from '../services/CreateCategoryService';
+import { createCategoryController } from '../modules/cars/useCases/createCategory';
+import { importCategoryController } from '../modules/cars/useCases/importCategory';
+import { listCategoriesController } from '../modules/cars/useCases/listCategories';
 
 const categoriesRoutes = Router();
-const categoriesRepository = new CategoriesRepository();
 
-categoriesRoutes.get('/categories', (request: Request, response: Response) => {
-  const categories = categoriesRepository.list();
-
-  return response.json(categories);
+const upload = multer({
+  dest: './tmp',
 });
 
-categoriesRoutes.post('/categories', (request: Request, response: Response) => {
-  const { name, description } = request.body;
+categoriesRoutes.get('/categories', (request, response) => {
+  listCategoriesController.handle(request, response);
+});
 
-  const createCategoryService = new CreateCategoryService(categoriesRepository);
+categoriesRoutes.post('/categories', (request, response) => {
+  createCategoryController.handle(request, response);
+});
 
-  try {
-    const category = createCategoryService.execute({
-      name,
-      description,
-    });
-
-    return response.status(201).json(category);
-  } catch (error) {
-    return response.status(400).json({ error: error.message });
-  }
+categoriesRoutes.post('/import', upload.single('file'), (request, response) => {
+  importCategoryController.handle(request, response);
 });
 
 export { categoriesRoutes };

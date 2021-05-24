@@ -9,7 +9,7 @@ import styles from '../styles/Home.module.scss';
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   };
 }
 
@@ -27,10 +27,10 @@ export default function Home({ product }: HomeProps) {
             News about the <span>React</span> world.
           </h1>
           <p>
-            Get acess to all the publications <br />{' '}
+            Get access to all the publications <br />{' '}
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
 
         <img src='/images/avatar.svg' alt='Girl Coding' />
@@ -44,9 +44,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const product = {
     priceId: price.id,
-    amount: new Intl.NumberFormat('pt-PT', {
+    amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'USD',
     }).format(price.unit_amount / 100),
   };
   return {

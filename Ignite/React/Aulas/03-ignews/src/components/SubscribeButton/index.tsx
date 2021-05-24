@@ -16,7 +16,7 @@ export function SubscribeButton() {
     }
 
     if (session.activeSubscription) {
-      router.push('/');
+      router.push('/posts');
       return;
     }
 

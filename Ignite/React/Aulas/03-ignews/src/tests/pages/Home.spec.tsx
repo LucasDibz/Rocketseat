@@ -29,14 +29,15 @@ describe('Home page', () => {
 
     const response = await getStaticProps({});
 
-    expect(response).toEqual({
-      props: {
-        product: {
-          priceId: 'fake-price-id',
-          amount: '$10.00',
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          product: {
+            priceId: 'fake-price-id',
+            amount: '$10.00',
+          },
         },
-      },
-      revalidate: 86400,
-    });
+      }),
+    );
   });
 });

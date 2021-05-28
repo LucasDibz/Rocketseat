@@ -1,26 +1,31 @@
-# Desafio Ignite React - 02
+# WatchMe 📸
 
-Desafio do curso Ignite da Rocketseat.
+![](watchMe.png)
 
-O desafio era refatorar o código, escrito totalmente no arquivo App.tsx, criando pelo menos dois componentes.
+&nbsp;
+## Desafio Ignite React - 02
+Componentizar a aplicação que estava escrita em um único arquivo.
 
+&nbsp;
+## ⚙️ Test
+Para compilar a aplicação utilize a sequência: 
+```
+yarn
+yarn dev
+```
 
-Checklist:
-- A aplicação possui apenas uma funcionalidade principal que é a listagem de filmes;
-- Na sidebar é possível selecionar qual categoria de filmes deve ser listada;
-- A primeira categoria da lista (que é "Ação") já deve começar como marcada;
-- O header da aplicação possui apenas o nome da categoria selecionada que deve mudar dinamicamente.
+Para testar a aplicação utilize:
+```
+yarn server
+yarn test
+```
 
+&nbsp;
+## 🛠️ Built With
 
-## Test
-Para validar que as funcionalidades estão corretas, execute o comando `yarn test` e observe os status dos testes.
+- [React](https://reactjs.org/)
 
-
-## Built With
-
-* [TypeScript](https://www.typescriptlang.org/) 
-
-
+&nbsp;
 ## Authors
 
 * **Rocketseat** - [Rocketseat](https://github.com/Rocketseat)

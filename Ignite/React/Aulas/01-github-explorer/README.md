@@ -1,28 +1,24 @@
-# to.do 📸
+# Github Explorer 📸
 
-![](todo.png)
-
-&nbsp;
-## Desafio Ignite React - 01
-Conhecimentos básicos de React como Componente, Estado, Propriedades.
+![](github-explorer.png)
 
 &nbsp;
-## ⚙️ Test
+## Ignite React - 01
+Listagem de repositórios GitHub
+
+&nbsp;
+## ⚙️ Build
 Para compilar a aplicação utilize a sequência: 
 ```
 yarn
 yarn dev
 ```
 
-Para testar a aplicação utilize:
-```
-yarn test
-```
-
 &nbsp;
 ## 🛠️ Built With
 
 - [React](https://reactjs.org/)
+
 
 &nbsp;
 ## Authors

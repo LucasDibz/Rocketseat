@@ -1,23 +1,13 @@
-# Desafio Ignite React - 04
+# Spacetraveling 📸
 
-Desafio do curso Ignite da Rocketseat.
+![](spacetraveling.png)
 
-O desafio era criar um blog do zero
+&nbsp;
+## Desafio Ignite React - 04
+Criar do zero uma aplicação de um blog com Prismic CMS a partir de um layout do Figma
 
-
-Implementar:
-- Estilizações global, comun e individuais;
-- Importação de fontes Google;
-- Paginação de posts;
-- Cálculo de tempo estimado de leitura do post;
-- Geração de páginas estáticas com os métodos `getStaticProps` e `getStaticPaths`;
-- Formatação de datas com `date-fns`;
-- Uso de ícones com `react-icons`;
-- Requisições HTTP com `fetch`;
-- Entre outros.
-
-
-## Test
+&nbsp;
+## ⚙️ Test
 Para compilar a aplicação utilize a sequência: 
 ```
 yarn
@@ -29,13 +19,15 @@ Para testar a aplicação utilize:
 yarn test
 ```
 
+&nbsp;
+## 🛠️ Built With
 
-## Built With
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Prismic](https://prismic.io/)
 
-* [Nextjs](https://nextjs.org/) 
-* [TypeScript](https://www.typescriptlang.org/) 
 
-
+&nbsp;
 ## Authors
 
 * **Rocketseat** - [Rocketseat](https://github.com/Rocketseat)

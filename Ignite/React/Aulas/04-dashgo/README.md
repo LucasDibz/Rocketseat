@@ -1,22 +1,17 @@
-# WorldTrip 📸
+# dashgo 📸
 
-![](worldtrip.png)
-
-&nbsp;
-## Desafio Ignite React - 05
-Desenvolver a interface de uma aplicação utilizando como base o Chakra UI e o layout do Figma.
+![](dashgo.png)
 
 &nbsp;
-## ⚙️ Test
+## Ignite React - 04
+Dashboard de sistemas
+
+&nbsp;
+## ⚙️ Build
 Para compilar a aplicação utilize a sequência: 
 ```
 yarn
 yarn dev
-```
-
-Para testar a aplicação utilize:
-```
-yarn test
 ```
 
 &nbsp;
@@ -25,6 +20,9 @@ yarn test
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
+- [Mirage.js](https://miragejs.com/)
+- [Faker.js](https://github.com/marak/Faker.js/)
+- [React Query](https://react-query.tanstack.com/)
 
 
 &nbsp;

@@ -1,28 +1,26 @@
-# to.do 📸
+# dtMoney 📸
 
-![](todo.png)
-
-&nbsp;
-## Desafio Ignite React - 01
-Conhecimentos básicos de React como Componente, Estado, Propriedades.
+![](dtmoney.png)
 
 &nbsp;
-## ⚙️ Test
+## Ignite React - 02
+App de transações financeiras
+
+&nbsp;
+## ⚙️ Build
 Para compilar a aplicação utilize a sequência: 
 ```
 yarn
 yarn dev
 ```
 
-Para testar a aplicação utilize:
-```
-yarn test
-```
-
 &nbsp;
 ## 🛠️ Built With
 
 - [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Mirage.js](https://miragejs.com/)
+
 
 &nbsp;
 ## Authors

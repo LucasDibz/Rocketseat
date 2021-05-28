@@ -1,10 +1,10 @@
-# WorldTrip 📸
+# Upfi 📸
 
-![](worldtrip.png)
+![](upfi.png)
 
 &nbsp;
-## Desafio Ignite React - 05
-Desenvolver a interface de uma aplicação utilizando como base o Chakra UI e o layout do Figma.
+## Desafio Ignite React - 06
+Realizar o upload e listagem de imagens utilizando React Query, React Hook Form e Chakra UI.
 
 &nbsp;
 ## ⚙️ Test
@@ -25,6 +25,10 @@ yarn test
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
+- [React Query](https://react-query.tanstack.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [FaunaDB](https://fauna.com/)
+- [ImgBB](https://imgbb.com/)
 
 
 &nbsp;

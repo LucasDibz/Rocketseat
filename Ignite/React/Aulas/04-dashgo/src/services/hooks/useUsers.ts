@@ -23,8 +23,6 @@ export async function getUsers(page: number): Promise<GetUserResponse> {
 
   const totalCount = Number(headers['x-total-count']);
 
-  console.log('getUsers = ', data.users);
-
   const users = data.users.map((user: User) => {
     return {
       id: user.id,
@@ -37,8 +35,6 @@ export async function getUsers(page: number): Promise<GetUserResponse> {
       }),
     };
   });
-
-  console.log('depois = ', { users });
 
   return { users, totalCount };
 }

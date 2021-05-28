@@ -44,7 +44,7 @@ export default function Home() {
   }
 
   /*
-   * useCallback - memo a function
+   * useCallback - memorize function
    */
   const addToWishlist = useCallback(async (id: number) => {
     console.log(id);

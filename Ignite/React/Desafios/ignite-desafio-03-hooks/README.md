@@ -1,39 +1,31 @@
-# Desafio Ignite React - 03
+# Rocketshoes 📸
 
-Desafio do curso Ignite da Rocketseat.
+![](rocketshoes.png)
 
-O desafio era criar um hook de carrinho de compras.
+&nbsp;
+## Desafio Ignite React - 03
+Criar os Hooks do carrinho de compras.
 
-
-Checklist:
-- Adicionar um novo produto ao carrinho;
-- Remover um produto do carrinho;
-- Alterar a quantidade de um produto no carrinho;
-- Cálculo dos preços sub-total e total do carrinho;
-- Validação de estoque;
-- Exibição de mensagens de erro;
-- Entre outros.
-
-
-## Test
+&nbsp;
+## ⚙️ Test
 Para compilar a aplicação utilize a sequência: 
 ```
 yarn
-yarn server
-yarn start
+yarn dev
 ```
 
-Para verificar se a aplicação está correta utilize: 
+Para testar a aplicação utilize:
 ```
+yarn server
 yarn test
 ```
 
+&nbsp;
+## 🛠️ Built With
 
-## Built With
+- [React](https://reactjs.org/)
 
-* [TypeScript](https://www.typescriptlang.org/) 
-
-
+&nbsp;
 ## Authors
 
 * **Rocketseat** - [Rocketseat](https://github.com/Rocketseat)

@@ -3,13 +3,17 @@
   "info": {
     "title": "RentX Documentation",
     "description": "This is an API Rent",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "contact": {
+      "email": "leo@email.com"
+    }
   },
-
   "paths": {
     "/categories": {
       "post": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "Create a category",
         "description": "Create a new category",
         "requestBody": {
@@ -26,7 +30,7 @@
                   }
                 },
                 "example": {
-                  "name": "Category Test",
+                  "name": "category name sample",
                   "description": "Category description sample"
                 }
               }
@@ -38,14 +42,15 @@
             "description": "Created"
           },
           "500": {
-            "description": "Category already exists"
+            "description": "Category already exists!"
           }
         }
       },
       "get": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "List all categories",
-        "description": "List all categories",
         "responses": {
           "200": {
             "description": "Success",
@@ -73,7 +78,9 @@
     },
     "/categories/import": {
       "post": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "Upload a new category",
         "description": "Upload a new category",
         "requestBody": {
@@ -100,13 +107,17 @@
     },
     "/specifications": {
       "post": {
-        "tags": ["Specifications"],
+        "tags": [
+          "Specifications"
+        ],
         "summary": "Create a specification",
         "description": "Create a new specification",
         "requestBody": {
           "content": {
             "application/json": {
-              "$ref": "#/definitions/Specification"
+              "schema": {
+                "$ref": "#definitions/Specification"
+              }
             }
           }
         },
@@ -115,7 +126,7 @@
             "description": "Created"
           },
           "500": {
-            "description": "Specification already exists"
+            "description": "Specification already exists!"
           }
         }
       }

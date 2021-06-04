@@ -1,13 +1,15 @@
-import { Category } from '../entities/Category';
+import { Category } from '../infra/typeorm/entities/Category';
 
-//DTO => Data transfer object
-export interface ICreateCategoryDTO {
+// DTO => Data Transfer object
+interface ICreateCategoryDTO {
   name: string;
   description: string;
 }
 
-export interface ICategoryRepository {
+interface ICategoriesRepository {
   findByName(name: string): Promise<Category>;
   list(): Promise<Category[]>;
-  create({ name, description }: ICreateCategoryDTO): Promise<Category>;
+  create({ name, description }: ICreateCategoryDTO): Promise<void>;
 }
+
+export { ICategoriesRepository, ICreateCategoryDTO };

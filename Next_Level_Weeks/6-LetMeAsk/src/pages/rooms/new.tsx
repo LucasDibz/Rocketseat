@@ -1,15 +1,36 @@
+import { FormEvent, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import illustrationImg from '../../../public/images/illustration.svg';
-import logoImg from '../../../public/images/logo.svg';
+import { useRouter } from 'next/router';
 
 import { Button } from '../../components/Button';
 
-import styles from '../../styles/Auth.module.scss';
+import { database } from '../../services/firebase';
 import { useAuth } from '../../hooks/useAuth';
 
+import illustrationImg from '../../../public/images/illustration.svg';
+import logoImg from '../../../public/images/logo.svg';
+import styles from '../../styles/Auth.module.scss';
+
 export default function NewRoom() {
-  // const { user } = useAuth();
+  const router = useRouter();
+  const { user } = useAuth();
+  const [newRoom, setNewRoom] = useState('');
+
+  async function handleCreateRoom(event: FormEvent) {
+    event.preventDefault();
+
+    if (!newRoom.trim()) return;
+
+    const roomRef = database.ref('rooms');
+
+    const firebaseRoom = await roomRef.push({
+      title: newRoom,
+      authorId: user?.id,
+    });
+
+    router.push(`/rooms/${firebaseRoom.key}`);
+  }
 
   return (
     <div className={styles.authContainer}>
@@ -23,8 +44,14 @@ export default function NewRoom() {
         <div className={styles.mainContent}>
           <Image src={logoImg} alt='Letmeask' />
           <h2>Criar uma nova sala</h2>
-          <form>
-            <input type='text' placeholder='Nome da sala' />
+
+          <form onSubmit={handleCreateRoom}>
+            <input
+              type='text'
+              placeholder='Nome da sala'
+              onChange={(event) => setNewRoom(event.target.value)}
+              value={newRoom}
+            />
             <Button type='submit'>Criar sala</Button>
           </form>
 

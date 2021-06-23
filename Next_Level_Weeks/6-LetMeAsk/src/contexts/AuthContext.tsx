@@ -22,7 +22,7 @@ export const AuthContext = createContext({} as AuthContextData);
 export function AuthProvider({ children }: AuthProviderProps) {
   // const [user, setUser] = useState<User>();
   const [user, setUser] = useState<User>({
-    id: 'MDQ6VXNlcjQ5MjQ3Mjc1',
+    id: 'c9QuVviq20PiJ9xMF7fmAogD1ee2',
     avatar: 'https://avatars.githubusercontent.com/u/49247275?v=4',
     name: 'Lucas Dib',
   });

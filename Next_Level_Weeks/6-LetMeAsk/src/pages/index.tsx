@@ -37,6 +37,11 @@ export default function Home() {
       return;
     }
 
+    if (!roomRef.val().closedAt()) {
+      alert('Sala encerrada!');
+      return;
+    }
+
     router.push(`/rooms/${roomCode}`);
   }
 

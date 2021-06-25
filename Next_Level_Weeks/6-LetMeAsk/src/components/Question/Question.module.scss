@@ -8,6 +8,25 @@
     margin-top: 0.5rem;
   }
 
+  &.isHighlighted {
+    background: #f4f0ff;
+    border: 1px solid #835afd;
+
+    footer .userInfo span {
+      color: #29292e;
+    }
+  }
+
+  &.isAnswered {
+    background: rgba(173, 255, 195, 0.2);
+    border: 1px solid #227a35;
+
+    p {
+      color: #737380;
+      font-style: italic;
+    }
+  }
+
   p {
     color: #29292e;
   }
@@ -31,6 +50,11 @@
         color: #737380;
         font-size: 0.875rem;
       }
+    }
+
+    div {
+      display: flex;
+      gap: 1rem;
     }
 
     button {

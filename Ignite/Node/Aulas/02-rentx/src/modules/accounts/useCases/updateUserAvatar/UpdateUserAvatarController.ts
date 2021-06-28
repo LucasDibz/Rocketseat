@@ -1,11 +1,9 @@
-import { Request, Response } from 'express';
-import { container } from 'tsyringe';
+import { Request, Response } from "express";
+import { container } from "tsyringe";
 
-import { UpdateUserAvatarUseCase } from './UpdateUserAvatarUseCase';
+import { UpdateUserAvatarUseCase } from "./UpdateUserAvatarUseCase";
 
 class UpdateUserAvatarController {
-  constructor() {}
-
   async handle(request: Request, response: Response): Promise<Response> {
     const { id } = request.user;
     const avatar_file = request.file.filename;

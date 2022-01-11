@@ -1,6 +1,6 @@
 # WatchMe 📸
 
-![](watchMe.png)
+![](watchme.png)
 
 &nbsp;
 ## Desafio Ignite React - 02

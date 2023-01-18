@@ -18,7 +18,7 @@ async function run() {
   /**
    * Create habits
    */
-  await Promise.all([
+  await Promise.allSettled([
     prisma.habit.create({
       data: {
         id: firstHabitId,
@@ -59,7 +59,7 @@ async function run() {
     }),
   ]);
 
-  await Promise.all([
+  await Promise.allSettled([
     /**
      * Habits (Complete/Available): 1/1
      */
